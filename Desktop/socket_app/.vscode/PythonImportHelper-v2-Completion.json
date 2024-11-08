@@ -1,0 +1,47 @@
+[
+    {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
+        "label": "threading",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "threading",
+        "description": "threading",
+        "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "start_client",
+        "kind": 2,
+        "importPath": "client",
+        "description": "client",
+        "peekOfCode": "def start_client():\n    host = \"127.0.0.1\"\n    port = 49153\n    # Skapa en klient socket\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    try:\n        # Anslut till servern\n        client_socket.connect((host, port))\n        # Skicka namn till servern\n        name = input(\"Enter your name: \")",
+        "detail": "client",
+        "documentation": {}
+    },
+    {
+        "label": "handle_client",
+        "kind": 2,
+        "importPath": "server",
+        "description": "server",
+        "peekOfCode": "def handle_client(client_socket):\n    try:\n        # Ta emot namn från klienten\n        name = client_socket.recv(1024).decode('utf-8')\n        if not name:\n            print(\"Client did not send a name.\")\n            return\n        print(f\"Client {name} connected.\")\n        while True:\n            # Vänta på meddelande från klienten",
+        "detail": "server",
+        "documentation": {}
+    },
+    {
+        "label": "start_server",
+        "kind": 2,
+        "importPath": "server",
+        "description": "server",
+        "peekOfCode": "def start_server():\n    host = \"127.0.0.1\"\n    port = 49153\n    try:\n        # Skapa serverns socket\n        server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n        server_socket.bind((host, port))\n        server_socket.listen(5)\n        print(f\"Server listening on {host}:{port}\")\n        while True:",
+        "detail": "server",
+        "documentation": {}
+    }
+]
