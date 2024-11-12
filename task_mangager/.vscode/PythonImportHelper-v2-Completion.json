@@ -1,0 +1,74 @@
+[
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "add_task",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def add_task(title, description, due_date):\n    task = {\n        \"title\": title,\n        \"description\": description,\n        \"due_date\": due_date,\n        \"status\": \"under genomförande\"\n    }\n    tasks.append(task)\n    print(\"Uppgiften har lagts till framgångsrikt.\")\ndef display_tasks(show_completed=None):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "display_tasks",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def display_tasks(show_completed=None):\n    for i, task in enumerate(tasks):\n        if show_completed is None or (show_completed and task[\"status\"] == \"komplett\") or (not show_completed and task[\"status\"] == \"under genomförande\"):\n            print(f\"{i + 1}. {task['title']} - {task['status']}\")\ndef update(index, status):\n    if 0 <= index < len(tasks):\n        tasks[index][\"status\"] = status\n        print(\"Uppgiften är uppdaterad.\")\n    else:\n        print(\"Uppgiften hittades inte.\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "update",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def update(index, status):\n    if 0 <= index < len(tasks):\n        tasks[index][\"status\"] = status\n        print(\"Uppgiften är uppdaterad.\")\n    else:\n        print(\"Uppgiften hittades inte.\")\ndef save_tasks(filename=\"tasks.json\"):\n    with open(filename, \"w\") as file:\n        json.dump(tasks, file)\n    print(\"Uppgifterna har sparats.\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "save_tasks",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def save_tasks(filename=\"tasks.json\"):\n    with open(filename, \"w\") as file:\n        json.dump(tasks, file)\n    print(\"Uppgifterna har sparats.\")\ndef load_tasks(filename=\"tasks.json\"):\n    global tasks\n    try:\n        with open(filename, \"r\") as file:\n            tasks = json.load(file)\n        print(\"Uppgifterna har laddats upp.\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "load_tasks",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def load_tasks(filename=\"tasks.json\"):\n    global tasks\n    try:\n        with open(filename, \"r\") as file:\n            tasks = json.load(file)\n        print(\"Uppgifterna har laddats upp.\")\n    except FileNotFoundError:\n        print(\"Filen hittades inte.\")\ndef main():\n    load_tasks()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main():\n    load_tasks()\n    while True:\n        print(\"\\n-- Lista --\")\n        print(\"1. Lägg till en ny uppgift\")\n        print(\"2. Visa alla uppgifter\")\n        print(\"3. Visa färdiga uppgifter\")\n        print(\"4. Visa ej färdiga uppgifter\")\n        print(\"5. Uppdatera status\")\n        print(\"6. Spara uppgifter\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "tasks",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "tasks = []\ndef add_task(title, description, due_date):\n    task = {\n        \"title\": title,\n        \"description\": description,\n        \"due_date\": due_date,\n        \"status\": \"under genomförande\"\n    }\n    tasks.append(task)\n    print(\"Uppgiften har lagts till framgångsrikt.\")",
+        "detail": "main",
+        "documentation": {}
+    }
+]
